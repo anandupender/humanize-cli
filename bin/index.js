@@ -35,7 +35,7 @@ var personalLifeQuestions = [
 "What inspired you to make this commit?",
 "How do you feel about the code you just wrote?",
 "What time is it and how does that affect your mood?",
-"Where do you want to travel in the world next? 🚀🚘🏝"
+"Where do you want to travel in the world next? 🚀🚘🏝 "
 ];
 
 yargs
@@ -80,7 +80,7 @@ yargs
 // MORE COMPLEX COMMAND TO WRITE TO TIME CAPSULE FILE AFTER COMMITING CODE TO GITHUB
  .command("commit <message>", "Commit message to github",{}, function(argv){
 
-    // git.commit(argv.message);
+    git.commit(argv.message);
     var randomQuestion = personalLifeQuestions[Math.floor(Math.random() * personalLifeQuestions.length)];
 
     inquirer

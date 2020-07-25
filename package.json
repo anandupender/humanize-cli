@@ -1,0 +1,28 @@
+{
+  "name": "gist",
+  "version": "1.0.0",
+  "description": "Add some humanity to your next git repo",
+  "main": "bin/index.js",
+  "bin": {
+    "gist": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node ./bin/init.js"
+  },
+  "author": "Anand Upender",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "boxen": "^4.0.0",
+    "chalk": "^2.4.2",
+    "figlet": "^1.5.0",
+    "file-system": "^2.2.2",
+    "inquirer": "^7.3.3",
+    "node-persist": "^3.1.0",
+    "path": "^0.12.7",
+    "prepend-file": "^1.3.1",
+    "simple-git": "^2.15.0",
+    "yargs": "^13.2.4"
+  }
+}

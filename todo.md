@@ -1,0 +1,10 @@
+- integrate into Git workflow
+- reach out to crative design engineers for feedback and thoughts
+- link to Capsule in readme by adding a readme file if none exists or adding to the end of a readme file
+- craft better questions
+- focus on styling
+    - what cool libraries exist
+    - add emojis
+- finalize name
+- remove extra dependencies
+- publish to NPM

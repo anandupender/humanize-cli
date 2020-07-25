@@ -1,4 +1,4 @@
 # .gitignore 
 node_modules 
-.node-persists/storage
+.node-persists
 todo.md

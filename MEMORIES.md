@@ -4,3 +4,10 @@
 .   
 .   
 .   
+
+##### On Sat, 25 Jul 2020 22:00:15 GMT, you said:
+
+> Providing education for minority groups that could help them create their own businesses
+
+##### in response to this question about 🌍 da world : What's one problem you are interested to solve that you are not thinking about enough right now?
+____

@@ -149,7 +149,7 @@ yargs
       return;
     }
 
-    git.commit(argv.message);
+    git.add(filename).commit(argv.message);
     var currChoices = ['❤️  feelings', '🌍 da world','🧐 life plans','🎁 surprise me'];
 
     const greeting = chalk.white.bold("Time for a breather...");

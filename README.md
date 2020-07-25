@@ -26,3 +26,4 @@ npm install -g
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+[Check out my capsule here](../blob/master/CAPSULE.md)

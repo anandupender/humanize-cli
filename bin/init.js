@@ -43,7 +43,7 @@ inquirer
        store(answers);
 
        //create capsule file and readme with link?
-       fs.writeFile("capsule.md", "",function (err) {
+       fs.writeFile("CAPSULE.md", "",function (err) {
         if (err) throw err;
         console.log('File is created successfully.');
       }); 

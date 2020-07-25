@@ -48,7 +48,7 @@ yargs
  .command("write <message>", "Add to your time capsule",{}, function(argv){
     var timestamp = new Date().toUTCString();
 
-    fs.readFile('capsule.md', 'utf8', function(err, data) {
+    fs.readFile('CAPSULE.md', 'utf8', function(err, data) {
         if (err) throw err;
 
         // var toAppend1 = "\n\n### On " + timestamp + " you said:\n> " + argv.message + "\n\n" + "____";
@@ -69,7 +69,7 @@ yargs
 
         lines.splice(7,0,timestampInput, message);
         var newData = lines.join('\n');
-        fs.writeFile('capsule.md', newData, function (err) {
+        fs.writeFile('CAPSULE.md', newData, function (err) {
             if (err) return console.log(err);
             console.log('done');
           });
@@ -99,10 +99,10 @@ yargs
         var message = "> " + answers.reflection + "\n";
         var question = "##### in response to the question: " + randomQuestion  + "\n____";
 
-        //capsule.md already exists so write to it!
+        //CAPSULE.md already exists so write to it!
         var newData;
-        if (files.directoryExists('capsule.md')) {
-          fs.readFile('capsule.md', 'utf8', function(err, data) {
+        if (files.directoryExists('CAPSULE.md')) {
+          fs.readFile('CAPSULE.md', 'utf8', function(err, data) {
               if (err) throw err;
       
               var lines = data.split('\n');
@@ -120,13 +120,13 @@ yargs
               newData = lines.join('\n');
 
               //write to file
-              fs.writeFile('capsule.md', newData, function (err) {
+              fs.writeFile('CAPSULE.md', newData, function (err) {
                 if (err) return console.log(err);
                 console.log('Memory saved!');
               });
 
           });  
-        }else{  //capsule.md does not exist...
+        }else{  //CAPSULE.md does not exist...
           var lines = [];
           lines.push(openingMarkdown[0]);
           lines.push(openingMarkdown[1]);
@@ -137,7 +137,7 @@ yargs
           lines.splice(7,0,timestampInput, message, question);
           newData = lines.join('\n');
           //write to file
-          fs.writeFile('capsule.md', newData, function (err) {
+          fs.writeFile('CAPSULE.md', newData, function (err) {
             if (err) return console.log(err);
             console.log('Memory saved!');
           });
@@ -180,7 +180,7 @@ yargs
     ])
     .then(answers => {
       if(answers.deleteAuth){
-        fs.writeFile('capsule.md', '', function(){console.log('Capsule cleared')})
+        fs.writeFile('CAPSULE.md', '', function(){console.log('Capsule cleared')})
       }else{
           console.log("Capsule clear canceled...");
       }

@@ -149,7 +149,6 @@ yargs
       return;
     }
 
-    git.add(filename).commit(argv.message);
     var currChoices = ['❤️  feelings', '🌍 da world','🧐 life plans','🎁 surprise me'];
 
     const greeting = chalk.white.bold("Time for a breather...");
@@ -207,6 +206,7 @@ yargs
                 fs.writeFile(filename, newData, function (err) {
                     if (err) return console.log(err);
                     console.log('\nMemory saved to ' + filename +"!\n");
+                    git.add(filename).commit(argv.message);
                 });
 
             });  
@@ -219,6 +219,7 @@ yargs
                 fs.writeFile(filename, newData, function (err) {
                     if (err) return console.log(err);
                         console.log('Memory saved!');
+                        git.add(filename).commit(argv.message);
                     });
             }
       

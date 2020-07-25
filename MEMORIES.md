@@ -5,6 +5,18 @@
 .   
 .   
 
+##### On Sat, 25 Jul 2020 22:03:43 GMT, you said:
+
+> New Zealand!
+
+##### in response to this question about 🧐 life plans : Where do you want to travel in the world next? 🚀🚘🏝 
+____
+##### On Sat, 25 Jul 2020 22:02:32 GMT, you said:
+
+> My grandma, for her amazing ability to self reflect
+
+##### in response to this question about 🎁 surprise me : Who inspired you recently?
+____
 ##### On Sat, 25 Jul 2020 22:00:15 GMT, you said:
 
 > Providing education for minority groups that could help them create their own businesses

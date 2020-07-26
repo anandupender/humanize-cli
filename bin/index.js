@@ -19,6 +19,8 @@ var feelingQuestions = [
     "Where's your headspace at today?",
     "How do you feel about the code you just wrote?",
     "What time is it and how does that affect your mood?",
+    "What annoyed you today?",
+    "How have you been sleeping recently and why?"
 ];
 var worldQuestions = [
     "What's the most pressing issue going on in the world right now?",
@@ -31,7 +33,17 @@ var lifeQuestions = [
     "Where do you want to travel in the world next? 🚀🚘🏝 ",
     "What's the coolest new dev thing you learned about recently?",
     "What are you looking forward to outside work?",
-    "Did you or your friends have any big life moments happen recently?"
+    "Did you or your friends have any big life moments happen recently?",
+    "Who do you want to reconnect with soon?",
+    "What book are you reading now and who would you recommend it to?"
+    ];
+var surpriseQuestions = [
+    "Have you called your mom recently?",
+    "What are you looking forward to this weekend?",
+    "Are you doing anything fun tonight?",
+    "What new hobby are you curious to pick up?",
+    "What was the last dream you remember?",
+    "What is your most memorable nightmare?"
     ];
 var happyMessages = [
   "You're doing great! Remember to get some air"
@@ -40,7 +52,7 @@ var happyMessages = [
 yargs
 .scriptName("gist")
  .usage("Usage: $0")
- .option("m", { alias: "message", describe: "Your message", type: "string",nargs: 1})
+ .option("a", { alias: "all", describe: "Do all git actions: add, commit, push", type: "string",nargs: 1})
  
  // INIT - SHOULD BE FIRST COMMAND IN ANY REPO
  .command("init","Initialize gist in this repo.",{},function(argv){
@@ -82,8 +94,8 @@ yargs
          store(answers);
          var date = new Date().toLocaleDateString();
          openingText = "# Time Capsule\n";
-         openingText += "### created by " + answers.name + " on " + date + " to capture the emotional and global context behind this code.\n";
-         openingText+= "### set with the intention: " + answers.intention + "\n";
+         openingText += "#### created by " + answers.name + " on " + date + " to capture the emotional and global context behind this code.\n";
+         openingText+= "#### set with the intention: " + answers.intention + "\n";
          openingText+= ".   \n.   \n.   \n"
            
          //create capsule file and add headers
@@ -115,32 +127,6 @@ yargs
       }
  })
 
-
-// SIMPLE COMMAND TO WRITE TO TIME CAPSULE FILE
- .command("write <message>", "Add to your time capsule",{}, function(argv){
-    if (!files.directoryExists(filename)) {
-      console.log("Gist is not yet initialized on this repo. Please run gist init");
-      return;
-    }
-    var timestamp = new Date().toUTCString();
-
-    fs.readFile(filename, 'utf8', function(err, data) {
-        if (err) throw err;
-
-        var timestampInput = "##### On " + timestamp + " you said:\n" 
-        var message = "> " + argv.message + "\n" + "____";
-
-        var lines = data.split('\n');
-
-        lines.splice(7,0,timestampInput, message);
-        var newData = lines.join('\n');
-        fs.writeFile(filename, newData, function (err) {
-            if (err) return console.log(err);
-            console.log('done');
-          });
-        //
-    });  
- })
 
 // MORE COMPLEX COMMAND TO WRITE TO TIME CAPSULE FILE AFTER COMMITING CODE TO GITHUB
  .command("commit <message>", "Add to your time capsule AND commit to git",{}, function(argv){
@@ -177,7 +163,7 @@ yargs
             randomQuestion = lifeQuestions[Math.floor(Math.random() * feelingQuestions.length)];
         }else if(answer.type == currChoices[3]){
             //randomize list we select from
-            randomQuestion = lifeQuestions[Math.floor(Math.random() * feelingQuestions.length)];
+            randomQuestion = surpriseQuestions[Math.floor(Math.random() * surpriseQuestions.length)];
         }
         inquirer.prompt([
         {
@@ -186,10 +172,11 @@ yargs
             message: randomQuestion
         }]).then(answers => {
 
+            var question = randomQuestion  + "\n";
+            var message = "> " + answers.reflection + "\n\n";
             var timestamp = new Date().toUTCString();
-            var timestampInput = "##### On " + timestamp + ", you said:\n" 
-            var message = "> " + answers.reflection + "\n";
-            var question = "##### in response to this question about " + answer.type + " : " + randomQuestion  + "\n____";
+            var timestampInput = "📅" + timestamp + "\n" 
+            var type = answer.type +  "\n\n____";
 
             //CAPSULE.md already exists so write to it!
             var newData;
@@ -199,7 +186,7 @@ yargs
         
                 var lines = data.split('\n');
         
-                lines.splice(7,0,timestampInput, message, question);
+                lines.splice(7,0,question, message, timestampInput, type);
                 newData = lines.join('\n');
 
                 //write to file
@@ -213,7 +200,7 @@ yargs
             }else{  //CAPSULE.md does not exist...
                 var temp = openingText;
                 var lines = temp.split('\n');
-                lines.splice(7,0,timestampInput, message, question);
+                lines.splice(7,0,question, message, timestampInput, type);
                 newData = lines.join('\n');
                 //write to file
                 fs.writeFile(filename, newData, function (err) {
@@ -237,6 +224,51 @@ yargs
 
     return yargs.demandOption(['m']);
  })
+
+
+    // SIMPLE COMMAND TO DO ALL GIT ACTIONS I NORMALLY DO
+    .command("gitall <message>", "Do all git actions: add, commit, push",{}, function(argv){
+        git.add('./*').commit(argv.message).push('origin', 'master');;
+    })
+
+    // SIMPLE COMMAND TO RUN GIT STATUS
+    .command("status", "Git status",{}, function(argv){
+
+        git
+        .status(['--short'])
+        .then(status => { console.log(status)})
+        .catch(err => {console.log(eror)});
+    })
+
+
+
+
+ // SIMPLE COMMAND TO WRITE TO TIME CAPSULE FILE
+ .command("write <message>", "Add to your time capsule",{}, function(argv){
+    if (!files.directoryExists(filename)) {
+      console.log("Gist is not yet initialized on this repo. Please run gist init");
+      return;
+    }
+    var timestamp = new Date().toUTCString();
+
+    fs.readFile(filename, 'utf8', function(err, data) {
+        if (err) throw err;
+
+        var timestampInput = "##### On " + timestamp + " you said:\n" 
+        var message = "> " + argv.message + "\n" + "____";
+
+        var lines = data.split('\n');
+
+        lines.splice(7,0,timestampInput, message);
+        var newData = lines.join('\n');
+        fs.writeFile(filename, newData, function (err) {
+            if (err) return console.log(err);
+            console.log('done');
+          });
+        //
+    });  
+ })
+
 
  // SIMPLE COMMAND TO  ADD CAPSULE TO README
  .command("readme", "Link your capsule in your README", function(argv){

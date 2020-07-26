@@ -5,11 +5,15 @@
 .   
 .   
 
-##### On Sat, 25 Jul 2020 22:03:43 GMT, you said:
+Where do you want to travel in the world next? 🚀🚘🏝 
 
-> New Zealand!
+> New Zealand!   
 
-##### in response to this question about 🧐 life plans : Where do you want to travel in the world next? 🚀🚘🏝 
+📅 Sat, 25 Jul 2020 22:03:43 GMT    
+🧐 life plans    
+
+        
+           
 ____
 ##### On Sat, 25 Jul 2020 22:02:32 GMT, you said:
 

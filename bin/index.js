@@ -228,7 +228,9 @@ yargs
 
     // SIMPLE COMMAND TO DO ALL GIT ACTIONS I NORMALLY DO
     .command("gitall <message>", "Do all git actions: add, commit, push",{}, function(argv){
-        git.add('./*').commit(argv.message).push('origin', 'master');;
+        git.add('./*').commit(argv.message).push('origin', 'master')
+        .then(() => { console.log("All files added, committed, and pushed")})
+        .catch(err => {console.log(eror)});;
     })
 
     // SIMPLE COMMAND TO RUN GIT STATUS

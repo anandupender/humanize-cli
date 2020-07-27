@@ -29,6 +29,14 @@ At the end, you and any collaborators will be able ot trace the rollercoaster of
 npm install -g
 ```
 
+## How to contribute & make a command   
+
+[Check out a beginner's guide to open-source contributing](https://github.com/firstcontributions/first-contributions)   
+
+1. commands are written in bin/index.js
+2. "fake install" by running npm install -g in the project repo. Now you can run the CLI in any repo
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)   
 

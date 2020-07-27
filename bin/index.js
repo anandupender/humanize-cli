@@ -52,7 +52,7 @@ var happyMessages = [
 yargs
 .scriptName("gist")
  .usage("Usage: $0")
- .option("a", { alias: "all", describe: "Do all git actions: add, commit, push", type: "string",nargs: 1})
+//  .option("a", { alias: "all", describe: "Do all git actions: add, commit, push", type: "string",nargs: 1})
  
  // INIT - SHOULD BE FIRST COMMAND IN ANY REPO
  .command("init","Initialize gist in this repo.",{},function(argv){
@@ -229,7 +229,7 @@ yargs
     // SIMPLE COMMAND TO DO ALL GIT ACTIONS I NORMALLY DO
     .command("gitall <message>", "Do all git actions: add, commit, push",{}, function(argv){
         git.add('./*').commit(argv.message).push('origin', 'master')
-        .then(() => { console.log("All files added, committed, and pushed")})
+        .then(() => { console.log("\nAll files added, committed, and pushed\n")})
         .catch(err => {console.log(eror)});;
     })
 
@@ -275,7 +275,7 @@ yargs
  // SIMPLE COMMAND TO  ADD CAPSULE TO README
  .command("readme", "Link your capsule in your README", function(argv){
 
-   var link = "-----\n\n[Check out my capsule here](../blob/master/CAPSULE.md)";
+   var link = "-----\n\n[Check out my capsule here](../blob/master/MEMORIES.md)";
     fs.appendFile('README.md', link, function (err) {
       if (err) return console.log(err);
       if (files.directoryExists('README.md')) {

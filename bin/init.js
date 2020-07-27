@@ -12,15 +12,19 @@ const filename = "MEMORIES.md"
 
 console.clear();
 console.log(
-  chalk.yellow(
-    figlet.textSync('GIST', { horizontalLayout: 'full' })
-  )
+    chalk.yellow(
+        figlet.textSync('   GIST', { horizontalLayout: 'full' })
+    )
 );
 console.log(
     chalk.yellow(
-        "Welcome to Gist. A simple tool to add humanity, context, and reflection to our mechanical and mindless git commands.\n"
+    `\n    Welcome to Gist. A simple tool to add humanity, context, and reflection to our mechanical and mindless git commands.\n
+    Gist is a command line interface that asks you a reflection question during each git commit.
+    Then, at the end of a long project, anyone can look back at the MEMORIES.md file in your repo to understand the context under which the project was made.\n
+    Type "gist init" in any repository to launch the experience and "gist" to see all available commands.
+    `
     )
-  );
+);
 
 // inquirer
 //     .prompt([

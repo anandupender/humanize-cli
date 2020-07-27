@@ -5,6 +5,20 @@
 .   
 .   
 
+Did you or your friends have any big life moments happen recently?
+
+> daniel just started a new job! 
+
+
+📅Mon, 27 Jul 2020 19:20:43 GMT
+
+🧐 life plans
+
+____
+##### On Sun, 26 Jul 2020 23:23:39 GMT you said:
+
+> just an update
+____
 Where do you want to travel in the world next? 🚀🚘🏝 
 
 > New Zealand!   

@@ -1,0 +1,35 @@
+-  Addressing moments of insecurity about code
+    - How do you feel?
+    - Check in question (1-5 scaling)
+    - 3 things I’m proud of.
+    - 2 things I’m grateful for
+    - What’s the newest thing you learned from stack overflow
+- Make the “moment of joy” even funner with emojis!
+    - Stackoverflow - everything is online!
+- Not just self reflection, anyone can read each other’s journals
+- “With coding, there’s infinite ways to do something. When you figure out a way that’s intuitive to you, it feels like you figured it out! There’s always a variety of ways to do something.”
+- Code is creative.
+    - Sometimes coders and artists feel very separate
+    - Get coders out of their silo - it’s rare for them to do this. 
+- Stereotype of coders being rational and harsh
+    - All that some kids do is code, no socializing
+        - Promote socializing
+    - There’s a competitiveness and god complex
+    - Question if someone is doing something for the money
+- Nature questions
+    - Go open the window
+    - Go enjoy something beautiful - play a random song of Spotify
+    - Show a random piece of art (link?)
+        - ASCII art
+- Timed good news
+    - Timed breaks, do something in X time.
+- Every time you open the terminal it gives you 5 articles to read
+    - Wikipedia home page inspiration
+    - Top news article
+- Invitation
+    - Send an email via terminal 
+    - Suggested text messages to send to people!
+        - Enter an email to reconnect with an old friend!
+- Get Involved command
+    - Link to mutual aid, list of resources
+- Donate command

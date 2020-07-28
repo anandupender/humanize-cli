@@ -1,5 +1,6 @@
 # human-cli
 A reflective journal CLI for your next side project
+How? Your terminal asks you questions about your life and slowly builds an emotional log in your repo that you and others can look back on!
 
 ## Manifesto
 Coding is done by humans who live complex livevs embedded in a complex and everchanging world.   
